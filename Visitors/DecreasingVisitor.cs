@@ -7,10 +7,10 @@ namespace csharp.Visitors
         public void Visit(Item item)
         {
             item.SellIn--;
-            item.Quality--;
+            item.Quality = Helper.ClampValue(++item.Quality);
 
             if (item.SellIn <= 0)
-                item.Quality--;
+                item.Quality = Helper.ClampValue(++item.Quality);
         }
     }
 }

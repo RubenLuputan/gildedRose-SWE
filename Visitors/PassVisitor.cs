@@ -1,9 +1,4 @@
 using csharp.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace csharp.Visitors
 {
@@ -22,13 +17,13 @@ namespace csharp.Visitors
                 return;
             }
 
-            item.Quality++;
+            item.Quality = Helper.ClampValue(++item.Quality);
 
             if (item.SellIn <= 10)
-                item.Quality++;
+                item.Quality = Helper.ClampValue(++item.Quality);
 
             if (item.SellIn <= 5)
-                item.Quality++;
+                item.Quality = Helper.ClampValue(++item.Quality);
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using csharp.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace csharp.Visitors
 {
@@ -12,7 +7,7 @@ namespace csharp.Visitors
         public void Visit(Item item)
         {
             item.SellIn--;
-            item.Quality++;
+            item.Quality = Helper.ClampValue(++item.Quality);
         }
     }
 }

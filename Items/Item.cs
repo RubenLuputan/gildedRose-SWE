@@ -6,13 +6,7 @@ namespace csharp.Items
     {
         public string Name { get; set; }
         public int SellIn { get; set; }
-
-        private int _quality;
-        public int Quality
-        {
-            get => _quality;
-            set => _quality = (value < 0) ? 0 : (value > 50) ? 50 : value;
-        }
+        public int Quality { get; set; }
 
         public virtual void Update(IVisitorStrategy visitor)
         {
